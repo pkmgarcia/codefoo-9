@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CodeFoo 9 Front End Submission</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/media-collection.js"></script>
+    <script src="js/media-view.js"></script>
+    <script src="js/index.js"></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport"></meta>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  </head>
+  <body>
+    <div class="grow desktop"></div>
+    <main>
+      <header>
+        <h1 id="heading">Latest News</h1>
+      </header>
+      <hr>
+      <div id="content">
+        <aside>
+          <ul>
+            <li>
+              <button id="filter-latest" class="nav-button">
+                <svg class="icon" width="32px" height="32px">
+                  <circle cx="16" cy="16" r="15" stroke-width="2" stroke="white" fill="#bf1313"></circle>
+                  <polyline points="16,9 16,16 28,16" transform="rotate(-45) translate(-17, 8)" stroke-width="2" stroke="white" fill="none"></polyline>
+                </svg>
+                <span class="nav-button-text">Latest</span>
+              </button>
+            </li>
+            <li>
+              <button id="filter-videos" class="nav-button">
+                <svg class="icon" width="32px" height="32px">
+                  <polyline points="4,2 27,16 4,30 4,2" stroke-width="2" stroke="white" fill="none"></polyline>
+                </svg>
+                <span class="nav-button-text">Videos</span>
+              </button>
+            </li>
+            <li>
+              <button id="filter-articles" class="nav-button">
+                <svg class="icon" width="32px" height="32px">
+                  <polyline points="7,2 19,2 25,7 25,30 7,30 4,27 4,5 7,2" stroke-width="2" stroke="white" fill="none"></polyline>
+                  <polyline points="19,2 19,7 25,7" stroke-width="2" stroke="white" fill="none"></polyline>
+                  <line x1="8" y1="14" x2="13" y2="14" stroke-width="2" stroke="white" fill="none"></line>
+                  <line x1="8" y1="18" x2="17" y2="18" stroke-width="2" stroke="white" fill="none"></line>
+                  <line x1="8" y1="22" x2="13" y2="22" stroke-width="2" stroke="white" fill="none"></line>
+                </svg>
+                <span class="nav-button-text">Articles</span>
+              </button>
+            </li>
+          </ul>
+        </aside>
+        <div id="media">
+          <div id="media-view" class="grow">
+            <ul id="media-list" class="grow">
+              <!-- jquery fills this in :) -->
+            </ul>
+            <div style="min-width: 256px" class="grow desktop"></div>
+          </div>
+          <button id="load-more-button">Load More</button>  
+        </div>
+      </div>
+    </main>
+    <div class="grow desktop"></div>
+  </body>
+</html>

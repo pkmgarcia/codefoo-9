@@ -1,0 +1,158 @@
+html {
+}
+
+body {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+main {
+
+}
+
+header {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+#heading {
+  margin: 0;
+  justify-content: flex-end;
+}
+
+#content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+aside {
+  margin: 8px 16px 0 0;
+  width: 100%;
+}
+
+aside ul {
+  padding: 0;
+  margin: 0;
+}
+
+aside ul li {
+  list-style-type: none;
+}
+
+.icon {
+  margin: 4px;
+}
+
+.nav-button {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  border: none;
+  padding: 8px;
+  background-color: #bf1313;
+  color: #ffffff;
+  width: 100%;
+  min-width: 256px;
+  border-radius: 5px;
+}
+
+.nav-button-text {
+  margin: 0 16px;
+  font-size: 1.25em;
+}
+
+#media-list {
+  padding: 0;
+  margin: 0;
+}
+
+#media-list li {
+  list-style-type: none;
+}
+
+#media {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#media-view {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+#media-view button {
+  border: none;
+  background-color: #bf1313;
+  color: #ffffff;
+  width: 100%;
+}
+
+.media-view-item {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 8px 0;
+}
+
+.media-view-item-details {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  margin: 8px;
+}
+
+.media-view-item-comment-count {
+  margin: 0 8px 0 0;
+}
+
+.media-view-item-age {
+  margin: 0 8px;
+}
+
+#load-more-button {
+  border: none;
+  border-radius: 5px;
+  background-color: #bf1313;
+  color: #ffffff;
+  width: 100%;
+}
+
+.grow {
+  flex: 1 1 auto;
+}
+
+.tablet {
+  display: none;
+}
+
+.desktop {
+  display: none;
+}
+
+@media only screen and (min-width: 600px) {
+  #content {
+    flex-flow: row wrap;
+  }
+  .tablet {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1350px) {
+  aside {
+    width: auto;
+  }
+  #heading {
+    font-size: 3em;
+  }
+  #content {
+    flex-flow: row nowrap;
+  }
+  .tablet {
+    display: block;
+  }
+  .desktop {
+    display: block;
+  }
+}
