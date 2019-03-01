@@ -75,6 +75,7 @@ aside ul li {
 #media {
   display: flex;
   flex-flow: column nowrap;
+  flex: 1 1 auto;
 }
 
 #media-view {
