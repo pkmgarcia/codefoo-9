@@ -17,7 +17,7 @@ $(document).ready(function() {
   });
 
   // Set click event for fetching more media into the collection
-  $("#media-view button").click(function() {
+  $("#load-more-button").click(function() {
     mediaCollection.fetch();
   });
 });
