@@ -37,7 +37,7 @@ aside ul li {
   margin: 4px;
 }
 
-.icon * {
+.nav-icon * {
   stroke: gray;
   fill: none;
 }
@@ -61,7 +61,7 @@ aside ul li {
   color: white;
 }
 
-.active-nav-button .icon * {
+.active-nav-button .nav-icon * {
   stroke: white;
 }
 
@@ -76,11 +76,11 @@ aside ul li {
   color: white;
 }
 
-.nav-button:hover .icon * {
+.nav-button:hover .nav-icon * {
   stroke: black;
 }
 
-.active-nav-button:hover .icon * {
+.active-nav-button:hover .nav-icon * {
   stroke: white;
 }
 
@@ -154,12 +154,23 @@ aside ul li {
 
 .media-view-image-overlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 10px;
+  left: 6px;
+  padding: 4px;
 
   background-color: #bf1313;
   color: white;
   border-radius: 5px;
+}
+
+.duration {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.duration span {
+  margin: 0 4px;
 }
 
 #load-more-button {

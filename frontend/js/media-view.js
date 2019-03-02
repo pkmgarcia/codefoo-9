@@ -111,9 +111,15 @@ MediaView.prototype.duration2html = function(duration) {
   const minutes = Math.floor(duration / secondsPerMinute);
   const seconds = duration % secondsPerMinute;
 
-  html.push('<span class="duration">');
+  html.push('<div class="duration">');
+  html.push('<svg class="icon" width="32px" height="32px">');
+  html.push('<circle cx="16" cy="16" r="15" stroke-width="2" stroke="white" fill="white"></circle>');
+  html.push('<polygon points="11,10 23,16 11,22" fill="#bf1313"</polygon>');
+  html.push('</svg>');
+  html.push('<span>');
   html.push(minutes.toString() + ':' + seconds.toString().padStart(2, '0'));
-  html.push('</span');
+  html.push('</span>');
+  html.push('</div>');
 
   return html.join('');
 }
@@ -163,9 +169,6 @@ MediaView.prototype.video2html = function (video) {
   html.push('<div class="media-view-image-overlay">')
   html.push(this.duration2html(video.metadata.duration));
   html.push('</div>');
-  html.push('</div>');
-
-  // There seems to be a missing </div> somewhere so here's an extra one...
   html.push('</div>');
 
   html.push('<div class="media-view-item-details">');
