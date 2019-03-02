@@ -100,6 +100,25 @@ MediaView.prototype.publishDate2html = function(publishDate) {
 }
 
 /**
+ * Converts duration (int) to html (string).
+ * @returns {string} html
+ * @param {int} duration Length of video in seconds.
+ */
+MediaView.prototype.duration2html = function(duration) {
+  const html = [];
+  const secondsPerMinute = 60;
+
+  const minutes = Math.floor(duration / secondsPerMinute);
+  const seconds = duration % secondsPerMinute;
+
+  html.push('<span class="duration">');
+  html.push(minutes.toString() + ':' + seconds.toString().padStart(2, '0'));
+  html.push('</span');
+
+  return html.join('');
+}
+
+/**
  * Helper function that, given media whose contentType is 'article',
  * will return the HTML representation in a string.
  * @param article
@@ -108,10 +127,12 @@ MediaView.prototype.publishDate2html = function(publishDate) {
 MediaView.prototype.article2html = function(article) {
   const html = [];
 
-  html.push('<section class="media-view-item">')
-  html.push('<div class="image-container">');
+  html.push('<section class="media-view-item">');
+
+  html.push('<div class="media-view-image">');
   html.push('<img alt="' + article.metadata.headline + '" src="' + article.thumbnails[0].url + '">');
   html.push('</div>')
+
   html.push('<div class="media-view-item-details">');
   html.push('<div class="media-view-item-metrics">');
   html.push(this.commentCount2html(article.commentCount));
@@ -119,7 +140,9 @@ MediaView.prototype.article2html = function(article) {
   html.push('</div>');
   html.push('<h3>' + article.metadata.headline + '</h3>');
   html.push('</div>')
+
   html.push('</section>');
+
   html.push('<hr>');
 
   return html.join('');
@@ -133,10 +156,18 @@ MediaView.prototype.article2html = function(article) {
 MediaView.prototype.video2html = function (video) {
   const html = [];
 
-  html.push('<section class="media-view-item">')
-  html.push('<div class="image-container">');
-  html.push('<img alt="' + video.metadata.headline + '" src="' + video.thumbnails[0].url + '">');
+  html.push('<section class="media-view-item">');
+
+  html.push('<div class="media-view-image">');
+  html.push('<img alt="' + video.metadata.title + '" src="' + video.thumbnails[0].url + '">');
+  html.push('<div class="media-view-image-overlay">')
+  html.push(this.duration2html(video.metadata.duration));
   html.push('</div>');
+  html.push('</div>');
+
+  // There seems to be a missing </div> somewhere so here's an extra one...
+  html.push('</div>');
+
   html.push('<div class="media-view-item-details">');
   html.push('<div class="media-view-item-metrics">');
   html.push(this.commentCount2html(video.commentCount));
@@ -145,6 +176,7 @@ MediaView.prototype.video2html = function (video) {
   html.push('<h3>' + video.metadata.title + '</h3>');
   html.push('</div>')
   html.push('</section>');
+
   html.push('<hr>');
 
   return html.join('');

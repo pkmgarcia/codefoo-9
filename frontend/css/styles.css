@@ -37,6 +37,11 @@ aside ul li {
   margin: 4px;
 }
 
+.icon * {
+  stroke: gray;
+  fill: none;
+}
+
 .nav-button {
   display: flex;
   flex-flow: row nowrap;
@@ -44,11 +49,39 @@ aside ul li {
   align-items: center;
   border: none;
   padding: 8px;
-  background-color: #bf1313;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: darkgray;
   width: 100%;
   min-width: 256px;
   border-radius: 5px;
+}
+
+.active-nav-button {
+  background-color: #bf1313;
+  color: white;
+}
+
+.active-nav-button .icon * {
+  stroke: white;
+}
+
+.nav-button:hover {
+  background-color: silver;
+  color: black;
+  cursor: pointer;
+}
+
+.active-nav-button:hover {
+  background-color: #bf1313;
+  color: white;
+}
+
+.nav-button:hover .icon * {
+  stroke: black;
+}
+
+.active-nav-button:hover .icon * {
+  stroke: white;
 }
 
 .nav-button-text {
@@ -96,12 +129,37 @@ aside ul li {
   margin: 8px;
 }
 
+.media-view-item-details h3:hover {
+  cursor: pointer;
+  color: #3888c9;
+  text-decoration: underline;
+}
+
 .media-view-item-comment-count {
   margin: 0 8px 0 0;
 }
 
 .media-view-item-age {
   margin: 0 8px;
+}
+
+.media-view-image {
+  position: relative;
+  cursor: pointer;
+}
+
+.media-view-image:hover {
+  opacity: .75;
+}
+
+.media-view-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  background-color: #bf1313;
+  color: white;
+  border-radius: 5px;
 }
 
 #load-more-button {
