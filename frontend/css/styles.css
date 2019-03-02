@@ -1,13 +1,6 @@
-html {
-}
-
 body {
   display: flex;
   flex-flow: row nowrap;
-}
-
-main {
-
 }
 
 header {
@@ -75,6 +68,7 @@ aside ul li {
 #media {
   display: flex;
   flex-flow: column nowrap;
+  flex: 1 1 auto;
 }
 
 #media-view {

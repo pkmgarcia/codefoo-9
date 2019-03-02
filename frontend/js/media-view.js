@@ -4,9 +4,9 @@
  */
 var MediaView = function(mediaCollection) {
   this.mediaCollection = mediaCollection;
-  this.media = [];
   var self = this;
   this.mediaCollection.subscribe(function(snapshot) {
+    self.media = [];
     snapshot.filteredMedia.forEach(function(el) {
       self.media.push(Object.assign({ contentId: el }, snapshot.media[el]));
     });

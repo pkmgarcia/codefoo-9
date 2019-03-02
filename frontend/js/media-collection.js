@@ -46,21 +46,27 @@ MediaCollection.prototype.filter = function(type) {
   const self = this;
   this.filteredMedia = Object.keys(self.media);
 
-  if (type !== undefined) {
+  if (type !== undefined && type !== "") {
     contentTypes.forEach(function(val) {
       if (val === type) {
         self.filterType = type;
       }
     });
 
-    self.filteredMedia.filter(function(el) {
+    self.filteredMedia = self.filteredMedia.filter(function(el) {
       if (self.media[el].contentType === self.filterType) {
         return true;
       } else {
         return false;
       }
     });
+  } else {
+    self.filterType = "";
   }
+
+  this.filteredMedia.sort(function(a, b) {
+    a.publishDate < b.publishDate;
+  });
 
   this.notifySubscribers();
   return Object.assign({ }, this);
@@ -118,7 +124,6 @@ MediaCollection.prototype.fetch = function() {
         success: function (response) {
           response.content.forEach(el => self.media[el.id].commentCount = el.count);
           self.filter(self.filterType);
-          // self.notifySubscribers();
           self.isFetching = false;
         }
       })
