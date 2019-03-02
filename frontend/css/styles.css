@@ -1,13 +1,6 @@
-html {
-}
-
 body {
   display: flex;
   flex-flow: row nowrap;
-}
-
-main {
-
 }
 
 header {
