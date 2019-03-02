@@ -14,18 +14,24 @@ var MediaView = function(mediaCollection) {
   });
 }
 
+/**
+ * Converts commentCount (integer) to html (string).
+ * @returns {string} html
+ * @param {int} commentCount
+ */
 MediaView.prototype.commentCount2html = function(commentCount) {
   const html = [];
-  
   html.push('<span class="media-view-item-comment-count">');
-
   html.push(commentCount);
-
   html.push('</span>');
-
   return html.join('');
 }
 
+/**
+ * Converts publishDate (string) to html (string).
+ * @returns {string} html
+ * @param {string} publishDate Date in ISO 8601 notation
+ */
 MediaView.prototype.publishDate2html = function(publishDate) {
   const html = [];
   const then = new Date(publishDate);
