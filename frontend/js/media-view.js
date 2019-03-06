@@ -22,6 +22,12 @@ var MediaView = function(mediaCollection) {
 MediaView.prototype.commentCount2html = function(commentCount) {
   const html = [];
   html.push('<span class="media-view-item-comment-count">');
+  html.push('<svg width="18px" height="18px">');
+  html.push('<ellipse cx="8" cy="11" rx="7" ry="4" stroke-width="2" stroke="#bf1313" fill="white">');
+  html.push('</ellipse>');
+  html.push('<polyline points="7,15 4,16 5,14" stroke-width="2" stroke="#bf1313">')
+  html.push('</polyline>');
+  html.push('</svg>');
   html.push(commentCount);
   html.push('</span>');
   return html.join('');
@@ -141,9 +147,9 @@ MediaView.prototype.article2html = function(article) {
 
   html.push('<div class="media-view-item-details">');
   html.push('<div class="media-view-item-metrics">');
-  html.push(this.commentCount2html(article.commentCount));
-  html.push(' - ');
   html.push(this.publishDate2html(article.metadata.publishDate));
+  html.push(' - ');
+  html.push(this.commentCount2html(article.commentCount));
   html.push('</div>');
   html.push('<div class="media-view-item-header">' + article.metadata.headline + '</div>');
   html.push('</div>')
@@ -174,9 +180,9 @@ MediaView.prototype.video2html = function (video) {
 
   html.push('<div class="media-view-item-details">');
   html.push('<div class="media-view-item-metrics">');
-  html.push(this.commentCount2html(video.commentCount));
-  html.push(' - ');
   html.push(this.publishDate2html(video.metadata.publishDate));
+  html.push(' - ');
+  html.push(this.commentCount2html(video.commentCount));
   html.push('</div>');
   html.push('<div class="media-view-item-header">' + video.metadata.title + '</div>');
   html.push('</div>')
