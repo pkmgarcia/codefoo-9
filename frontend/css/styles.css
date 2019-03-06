@@ -1,3 +1,7 @@
+html {
+  font-family: 'ars-maquette-web', sans-serif;
+}
+
 body {
   display: flex;
   flex-flow: row nowrap;
@@ -11,6 +15,7 @@ header {
 #heading {
   margin: 0;
   justify-content: flex-end;
+  font-weight: 900;
 }
 
 #content {
@@ -127,12 +132,29 @@ aside ul li {
   flex-flow: column nowrap;
   justify-content: flex-start;
   margin: 8px;
+  font-size: .75em;
 }
 
-.media-view-item-details h3:hover {
+.media-view-item-header {
+  font-weight: 600;
+  margin: 8px 0;
+  font-size: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 144px;
+  white-space: nowrap;
+}
+
+.media-view-item-header:hover {
   cursor: pointer;
   color: #3888c9;
   text-decoration: underline;
+}
+
+.media-view-item-metrics {
+  color: #bf1313;
+  font-weight: 700;
+
 }
 
 .media-view-item-comment-count {
@@ -146,10 +168,17 @@ aside ul li {
 .media-view-image {
   position: relative;
   cursor: pointer;
+
 }
 
 .media-view-image:hover {
   opacity: .75;
+}
+
+.media-view-image img {
+  width: 144px;
+  height: auto;
+  border-radius: 5px;
 }
 
 .media-view-image-overlay {
@@ -157,7 +186,6 @@ aside ul li {
   bottom: 10px;
   left: 6px;
   padding: 4px;
-
   background-color: #bf1313;
   color: white;
   border-radius: 5px;
@@ -179,6 +207,8 @@ aside ul li {
   background-color: #bf1313;
   color: #ffffff;
   width: 100%;
+  font-size: 1.25em;
+  padding: 8px;
 }
 
 .grow {
@@ -193,12 +223,38 @@ aside ul li {
   display: none;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 568px) {
   #content {
     flex-flow: row wrap;
   }
   .tablet {
     display: block;
+  }
+  .media-view-image img {
+    width: 284px;
+  }
+  .media-view-image-overlay {
+    bottom: 10px;
+    left: 6px;
+    padding: 4px;
+    font-weight: 600;
+  }
+  .media-view-item-details {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    margin: 8px;
+    font-size: 1em;
+  }
+  .media-view-item-header {
+    font-size: 1em;
+    overflow: visible;
+    white-space: normal;
+    width: auto;
+    text-overflow: unset;
+  }
+  .nav-button-text {
+    font-size: 1.5em;
   }
 }
 
@@ -217,5 +273,26 @@ aside ul li {
   }
   .desktop {
     display: block;
+  }
+ .media-view-item {
+    min-width: 640px;
+    max-width: 640px;
+  }
+  .media-view-image img {
+    min-width: 320px;
+    max-width: 320px;
+  }
+  .media-view-image-overlay {
+    bottom: 10px;
+    left: 6px;
+    padding: 4px;
+  }
+  .media-view-item-details {
+    min-width: 320px;
+    max-width: 320px;
+    font-size: 1em;
+  }
+  .media-view-item-header {
+    font-size: 1.25em;
   }
 }

@@ -142,9 +142,10 @@ MediaView.prototype.article2html = function(article) {
   html.push('<div class="media-view-item-details">');
   html.push('<div class="media-view-item-metrics">');
   html.push(this.commentCount2html(article.commentCount));
+  html.push(' - ');
   html.push(this.publishDate2html(article.metadata.publishDate));
   html.push('</div>');
-  html.push('<h3>' + article.metadata.headline + '</h3>');
+  html.push('<div class="media-view-item-header">' + article.metadata.headline + '</div>');
   html.push('</div>')
 
   html.push('</section>');
@@ -174,9 +175,10 @@ MediaView.prototype.video2html = function (video) {
   html.push('<div class="media-view-item-details">');
   html.push('<div class="media-view-item-metrics">');
   html.push(this.commentCount2html(video.commentCount));
+  html.push(' - ');
   html.push(this.publishDate2html(video.metadata.publishDate));
   html.push('</div>');
-  html.push('<h3>' + video.metadata.title + '</h3>');
+  html.push('<div class="media-view-item-header">' + video.metadata.title + '</div>');
   html.push('</div>')
   html.push('</section>');
 
