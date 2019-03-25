@@ -3,11 +3,15 @@ By **Patrick Garcia**.
 
 Submission for IGN's Code Foo 9 internship program.
 
-This repository contains:
-1) The [Front End Solution](), a screen responsive, front end application.
-2) The [Fullstack Solution](), Rooms, a fullstack, chatroom application.
-3) The [Free Response Solution]().
-4) The [Coding Challenge Solution]().
+Completed:
+1) The [Front End Solution](https://github.com/pkmgarcia/codefoo-9/tree/master/front-end), a screen responsive, front end application.
+2) The [Free Response Solution](https://github.com/pkmgarcia/codefoo-9/blob/master/Team-Rocket.md).
+
+Incomplete (Required):
+1) The [Coding Challenge Solution](https://github.com/pkmgarcia/codefoo-9/tree/master/coding-challenge).
+
+Incomplete (Optional):
+1) The [Fullstack Solution](https://github.com/pkmgarcia/codefoo-9/tree/master/fullstack), Rooms, a fullstack, chatroom application.
 
 ## Introduction
 Hi, I'm Patrick Kyle Garcia. I'm currently **pursuing a B.S. Software Engineering degree at San José State University** and am excited to be **graduating this May**.
